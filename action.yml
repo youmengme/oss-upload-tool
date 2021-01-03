@@ -1,0 +1,35 @@
+name: 'OSS Upload Tool'
+id: oss_upload_tool
+description: 'Upload all files in the folder to OSS'
+inputs:
+  accessKeyId:
+    description: 'access key id'
+    required: true
+    default: 'accessKeyId'
+  accessKeySecret:
+    description: 'access key secret'
+    required: true
+    default: 'accessKeySecret'
+  bucket:
+    description: 'oss bucket name'
+    required: true
+    default: ''
+  region: 
+    description: 'oss region name'
+    required: true
+    default: 'oss-cn-hangzou'
+  assetPath::
+    description: 'file directory path'
+    required: true
+    default: './'
+  targetPath:
+    description: 'oss path'
+    required: true
+    default: './'
+
+outputs:
+  urls:
+    description: 'The upload address of the successfully uploaded file'
+runs:
+  using: 'node12'
+  main: 'index.js'
