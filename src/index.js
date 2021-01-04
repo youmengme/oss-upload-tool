@@ -11,9 +11,9 @@ function uploadTool() {
       bucket: core.getInput('bucket', { required: true })
     })
 
-    const assetPath = core.getInput('assetPath', { required: true })
+    const assetPath = core.getInput('assetPath')
     core.info('assetPath', assetPath)
-    const targetPath = core.getInput('targetPath', { required: true })
+    const targetPath = core.getInput('targetPath')
     core.info('targetPath', targetPath)
     ossdir(oss)
       .upload(assetPath)
