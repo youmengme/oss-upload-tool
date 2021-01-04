@@ -20,9 +20,11 @@ inputs:
     default: 'oss-cn-hangzou'
   assetPath::
     description: 'file directory path'
+    required: true
     default: './'
   targetPath:
     description: 'oss path'
+    required: true
     default: './'
 
 outputs:
