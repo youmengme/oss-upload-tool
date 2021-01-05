@@ -18,7 +18,7 @@ inputs:
     description: 'oss region name'
     required: true
     default: 'oss-cn-hangzou'
-  assetPath::
+  assetPath:
     description: 'file directory path'
     required: true
     default: './'
