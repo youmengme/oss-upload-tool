@@ -7,11 +7,6 @@
   resolved "https://registry.npm.taobao.org/@actions/core/download/@actions/core-1.2.6.tgz#a78d49f41a4def18e88ce47c2cac615d5694bf09"
   integrity sha1-p41J9BpN7xjojOR8LKxhXVaUvwk=
 
-"@types/node@^8.0.20":
-  version "8.10.66"
-  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-8.10.66.tgz?cache=0&sync_timestamp=1609521930046&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-8.10.66.tgz#dd035d409df322acc83dff62a602f12a5783bbb3"
-  integrity sha1-3QNdQJ3zIqzIPf9ipgLxKleDu7M=
-
 "@vercel/ncc@^0.26.1":
   version "0.26.1"
   resolved "https://registry.npm.taobao.org/@vercel/ncc/download/@vercel/ncc-0.26.1.tgz#457f13c8f207f5e74d19944b6797f4708c02359f"
@@ -42,13 +37,6 @@ agentkeepalive@^3.4.1:
   integrity sha1-oROSTdP6JKC8O3gQjEUMKr7gD2c=
   dependencies:
     humanize-ms "^1.2.1"
-
-ali-oss-dir@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npm.taobao.org/ali-oss-dir/download/ali-oss-dir-0.4.0.tgz#7ee19032c753e59fdc7899a6b2737d7f2e557d96"
-  integrity sha1-fuGQMsdT5Z/ceJmmsnN9fy5VfZY=
-  dependencies:
-    rd "^1.0.0"
 
 ali-oss@^6.12.0:
   version "6.12.0"
@@ -697,13 +685,6 @@ raw-body@^2.2.0:
     http-errors "1.7.3"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
-
-rd@^1.0.0:
-  version "1.1.2"
-  resolved "https://registry.npm.taobao.org/rd/download/rd-1.1.2.tgz#86297e2025608ee5576c1b451e6997e679ef6b1d"
-  integrity sha1-hil+ICVgjuVXbBtFHmmX5nnvax0=
-  dependencies:
-    "@types/node" "^8.0.20"
 
 readable-stream@1.1.x:
   version "1.1.14"

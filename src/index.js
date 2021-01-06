@@ -1,3 +1,4 @@
+const fs = require('fs')
 const core = require('@actions/core');
 const OSS = require('ali-oss');
 const { getFolderAllFilePath } = require('./utils')
@@ -16,7 +17,7 @@ function uploadTool() {
     const exnames = core.getInput('exnames')
     const exmameArr = exnames.split(',').filter(ele => /^\./.test(ele))
 
-    
+
     getFolderAllFilePath(assetPath, exmameArr).then(urls => {
       try {
         urls.forEach(ele => {
