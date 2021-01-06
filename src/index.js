@@ -15,6 +15,7 @@ function uploadTool() {
     const targetPath = core.getInput('targetPath', { required: true })
     const exnames = core.getInput('exnames')
     const exmameArr = exnames.split(',').filter(ele => /^\./.test(ele))
+    
     getFolderAllFilePath(assetPath, exmameArr).then(urls => {
       try {
         urls.forEach(ele => {
