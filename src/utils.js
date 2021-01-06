@@ -5,7 +5,6 @@ function getFolderAllFilePath(dir, extnames = []) {
   return new Promise(resolve => {
     fs.readdir(dir, async (err, files) => {
       if (err) {
-        console.error(err)
         resolve([])
         return
       }
@@ -14,7 +13,6 @@ function getFolderAllFilePath(dir, extnames = []) {
           let pathname = path.join(dir, filename)
           fs.stat(pathname, async (err, stats) => { // 读取文件信息
             if (err) {
-              console.error(err)
               resolveItem([])
             }
             if (stats.isFile()) {
