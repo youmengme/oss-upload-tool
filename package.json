@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "ncc build src/index.js -m -o ./dist"
+    "build": "ncc build src/index.js -m -o ./dist",
+    "deploy": "yarn build && git add . && git commit -m 'update' && npm version patch && git push --tags"
   },
   "dependencies": {
     "@actions/core": "^1.2.6",
