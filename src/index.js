@@ -12,8 +12,8 @@ const oss = new OSS({
 
 function uploadTool() {
   try {
-    const assetPath = core.getInput('assetPath', { required: true })
-    const targetPath = core.getInput('targetPath', { required: true })
+    const assetPath = core.getInput('assetPath', { required: true }).replace(/\/+$/g, '')
+    const targetPath = core.getInput('targetPath', { required: true }).replace(/\/+$/g, '')
     const exnames = core.getInput('exnames')
     const exmameArr = exnames.split(',').filter(ele => /^\./.test(ele))
 
@@ -22,6 +22,7 @@ function uploadTool() {
       try {
         urls.forEach(ele => {
           const filePath = ele.replace(`${assetPath}/`, '')
+          core.info(filePath)
           oss.put(`${targetPath}/${filePath}`, fs.readFileSync(ele))
         })
       } catch (err) {
@@ -34,3 +35,5 @@ function uploadTool() {
 }
 
 uploadTool()
+
+// .nuxt/dist/client/fonts/RS_XingKai.16edcde.woff
