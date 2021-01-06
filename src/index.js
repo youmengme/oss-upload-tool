@@ -21,7 +21,8 @@ function uploadTool() {
       try {
         urls.forEach(ele => {
           const filePath = ele.replace(`${assetPath}/`, '')
-          core.info(`${assetPath}/`)
+          let a = '^' + assetPath + '$'
+          core.info(a)
           core.info(filePath)
           oss.put(`${targetPath}/${filePath}`, fs.readFileSync(ele))
         })
