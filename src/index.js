@@ -21,6 +21,7 @@ function uploadTool() {
       try {
         urls.forEach(ele => {
           const filePath = ele.replace(`${assetPath}/`, '')
+          core.info(`${assetPath}/`)
           core.info(filePath)
           oss.put(`${targetPath}/${filePath}`, fs.readFileSync(ele))
         })
@@ -34,5 +35,3 @@ function uploadTool() {
 }
 
 uploadTool()
-
-// .nuxt/dist/client/fonts/RS_XingKai.16edcde.woff
