@@ -18,7 +18,7 @@ function uploadTool() {
     getFolderAllFilePath(assetPath, exmameArr).then(urls => {
       try {
         urls.forEach(ele => {
-          const filePath = ele.replace(`${dirPath}/`, '')
+          const filePath = ele.replace(`${assetPath}/`, '')
           oss.put(`${targetPath}/${filePath}`, fs.readFileSync(ele))
         })
       } catch (err) {
