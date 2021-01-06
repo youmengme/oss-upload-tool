@@ -26,7 +26,10 @@ inputs:
     description: 'oss path'
     required: true
     default: './'
-
+  exnames:
+    descriptopn: 'Is a string comma separated'
+    required: false
+    default: ''
 outputs:
   urls:
     description: 'The upload address of the successfully uploaded file'

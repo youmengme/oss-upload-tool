@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const OSS = require('ali-oss');
-const ossdir = require('ali-oss-dir');
+const { getFolderAllFilePath } = require('./utils')
 
 const oss = new OSS({
   region: core.getInput('region', { required: true }),
@@ -9,20 +9,22 @@ const oss = new OSS({
   bucket: core.getInput('bucket', { required: true })
 })
 
-
 function uploadTool() {
   try {
-    const assetPath = core.getInput('assetPath')
-    const targetPath = core.getInput('targetPath')
-
-    ossdir(oss)
-      .upload(assetPath)
-      .to(targetPath)
-      .then((results) => {
-        core.info(results)
-      }).catch(e => {
-        uploadTool()
-      })
+    const assetPath = core.getInput('assetPath', { required: true })
+    const targetPath = core.getInput('targetPath', { required: true })
+    const exnames = core.getInput('exnames')
+    const exmameArr = exnames.split(',').filter(ele => /^\./.test(ele))
+    getFolderAllFilePath(assetPath, exmameArr).then(urls => {
+      try {
+        urls.forEach(ele => {
+          const filePath = ele.replace(`${dirPath}/`, '')
+          oss.put(`${targetPath}/${filePath}`, fs.readFileSync(ele))
+        })
+      } catch (err) {
+        core.setFailed(err.message)
+      }
+    })
   } catch (err) {
     core.setFailed(err.message)
   }
